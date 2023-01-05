@@ -23,7 +23,16 @@ export const sampleUserList: sampleUserType[] = [
   { id: 15, name: '김경멸', phone: '010-1234-5678' },
 ]
 
-export const example = [
+export type sampleProdType = {
+  id: number
+  code: string
+  brand: string
+  createdAt: number
+  article: string
+  title: string
+  state: string
+}
+export const example: sampleProdType[] = [
   {
     id: 1,
     code: 'P4523',
