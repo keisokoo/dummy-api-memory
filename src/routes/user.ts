@@ -140,11 +140,11 @@ router.post('/login', (req, res, next) => {
   }
   const user = findUserByName(username)
   if (!user) {
-    res.status(400).json({ message: 'Not Found', success: false })
+    res.status(404).json({ message: 'Not Found', success: false })
     return
   }
   if (md5(password) !== user.password) {
-    res.status(401).json({ message: '일치하는 값이 없습니다.', success: false })
+    res.status(404).json({ message: '일치하는 값이 없습니다.', success: false })
     return
   }
   const userInfo = { username: user.name, id: user.id }
@@ -168,7 +168,7 @@ router.post('/login', (req, res, next) => {
 router.get('/', authMiddleWare, (req, res, next) => {
   const user = findUserById(Number(req.headers.user_id))
   if (!user) {
-    res.status(400).json({ message: 'Not Found', success: false })
+    res.status(404).json({ message: 'Not Found', success: false })
     return
   }
   res.json({
