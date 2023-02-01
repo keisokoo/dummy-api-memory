@@ -1,8 +1,18 @@
-import { example, sampleUserList, sampleUserType } from './samples'
+import {
+  example,
+  sampleAreaGroup,
+  sampleSkillsGroup,
+  sampleStreets,
+  sampleUserList,
+  sampleUserType,
+} from './samples'
 
 export let listTargetType = {
   user: sampleUserList,
   prod: example,
+  area: sampleAreaGroup,
+  skill: sampleSkillsGroup,
+  streets: sampleStreets,
 }
 export type SampleListObjectType = typeof listTargetType
 export const isTargetType = (
