@@ -1,4 +1,5 @@
 import {
+  citiesSample,
   example,
   sampleAreaGroup,
   sampleSkillsGroup,
@@ -13,6 +14,7 @@ export let listTargetType = {
   area: sampleAreaGroup,
   skill: sampleSkillsGroup,
   streets: sampleStreets,
+  cities: citiesSample,
 }
 export type SampleListObjectType = typeof listTargetType
 export const isTargetType = (

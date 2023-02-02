@@ -106,7 +106,7 @@ router.get('/', authMiddleWare, (req, res, next) => {
   const cursorIndex = filteredList.findIndex((item) => item.id === cursor) ?? 0
 
   const paged =
-    cursor < filteredList.length
+    cursorIndex < filteredList.length
       ? filteredList.slice(cursorIndex + 1, cursorIndex + limit + 1)
       : []
 

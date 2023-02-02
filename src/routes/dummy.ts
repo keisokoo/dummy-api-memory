@@ -50,11 +50,13 @@ router.get('/:type', (req, res, next) => {
   })
 
   const cursorIndex = filteredList.findIndex((item) => item.id === cursor) ?? 0
-
+  console.log(cursorIndex, filteredList.length)
+  console.log(cursorIndex + 1, cursorIndex + limit + 1)
   const paged =
-    cursor < filteredList.length
+    cursorIndex < filteredList.length
       ? filteredList.slice(cursorIndex + 1, cursorIndex + limit + 1)
       : []
+  console.log('paged', filteredList, paged)
 
   let nextCursor = paged[paged.length - 1]?.id ?? null
   res.json({
