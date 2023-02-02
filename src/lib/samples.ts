@@ -319,7 +319,14 @@ export const citiesSample = [
   { id: 222, name: '대구', item: daeguDistrictSample },
 ]
 
-export const sampleStreets = [
+export const sampleStreets: {
+  id: number
+  fullName: string[]
+  isAll?: boolean
+  name: string
+  parent: number
+  selected?: boolean
+}[] = [
   ...seoulStreetSample,
   ...seoulStreetSample2,
   ...daeguStreetSample,

@@ -8,12 +8,19 @@ import {
   sampleUserType,
 } from './samples'
 
+let nextList = sampleStreets.filter((curr) => !curr.isAll)
+let checkedAll = sampleStreets
+  .filter((item) => item.isAll && item.selected)
+  .map((item) => item.parent)
+nextList = nextList.map((item) =>
+  checkedAll.includes(item.parent) ? { ...item, selected: true } : item
+)
 export let listTargetType = {
   user: sampleUserList,
   prod: example,
   area: sampleAreaGroup,
   skill: sampleSkillsGroup,
-  streets: sampleStreets,
+  streets: nextList,
   cities: citiesSample,
 }
 export type SampleListObjectType = typeof listTargetType
