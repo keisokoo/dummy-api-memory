@@ -5,6 +5,17 @@ import { v4 } from 'uuid'
 export const uuid = v4
 
 export type sampleUserType = { id: number; name: string; phone: string }
+
+export const monthlyDataList: { id: string; name: string }[] = [
+  {
+    id: '2023-02',
+    name: '기ㅁ경한의 은밀한 그곳.tsx',
+  },
+  {
+    id: '2023-03',
+    name: '기ㅁ경한의 은밀한 밀회.tsx',
+  },
+]
 export const sampleUserList: sampleUserType[] = [
   { id: 1, name: '구상언', phone: '010-3386-9350' },
   { id: 2, name: '팔상언', phone: '010-3386-9350' },
@@ -509,7 +520,7 @@ export const example: sampleProdType[] = [
     createdAt: 1595805869099,
     article:
       'MSA에서 Event Driven 이 함께 언급되는 이유는 무엇일까요? MSA 핵심 키워드 중 느슨한 결합과 연관이 있습니다. 각 마이크로서비스는 서로 간 느슨한 결합을 가져감으로써 타 시스템에 대한 의존과 영향도를 줄이고 각 시스템의 목적에 집중함으로써 강한 응집을 갖는 시스템을 만들 수 있습니다. Event Driven 은 이를 돕습니다. 이해를 돕',
-    title: '고객과의 소통을 돕는 서베이 툴 4가지',
+    title: '회원과의 소통을 돕는 서베이 툴 4가지',
     state: 'in-progress',
   },
   {
@@ -930,7 +941,7 @@ export const example: sampleProdType[] = [
     createdAt: 1587340815868,
     article:
       '안녕하세요. 모두싸인 제품 그룹에서 백엔드 개발을 맡고 있는 러츠라고 합니다. 이번 블로그 포스팅에서는 TypeORM에서 지원하는 마이그레이션 기능을 도입한 이유와 후기, 사용할 때의 주의점에 대해 이야기해보고자 합니다.다양한 이유가 있겠지만 모두싸인이 TypeORM을 통해 궁극적으로 얻고자 하는 핵심 목표는 다음과 같았습니다.수동으로 마이그레이션, 롤백',
-    title: '원활한 고객 경험을 완성시키는 방법',
+    title: '원활한 회원 경험을 완성시키는 방법',
     state: 'done',
   },
   {
@@ -1020,7 +1031,7 @@ export const example: sampleProdType[] = [
     createdAt: 1630082488993,
     article:
       '크롬 102 버전에서 처음으로 등장한 새로운 개발자 도구 탭입니다. 아직 실험단계이지만 체험해 볼 수 있습니다. 이름에서 알 수 있듯이 성능을 측정하는 탭 같지만, 성능 탭과 라이트하우스, web vitals같은 도구들이 이미 있는데 왜 굳이 새로운 탭을 만들었을까요?문서에서 소개하는 이유는 3가지입니다.(아마 기존 성능 탭을 의미하는 것 같지만) 정보가',
-    title: '실전 UI/UX -   피플카 고객경험 개선하기',
+    title: '실전 UI/UX -   피플카 회원경험 개선하기',
     state: 'done',
   },
   {
@@ -1381,7 +1392,7 @@ export const example: sampleProdType[] = [
     createdAt: 1582271339704,
     article:
       '함수 이름에 표현된 것보다 더 많은 일을 하거나 지나치게 세부적인 구현부가 드러나기도 한다. 이런 경우 보통 if문, for문이 많고 코드가 장황하다. 가령 fetchRecentArticles 라는 함수를 마주쳤다고 상상해보자. 이 함수가 수행하는 작업은 아래와 같다고 예상할 수 있다. (1) 저장된 아티클을 적당히 불러온다. (2) 최근 X일 내에 생성된',
-    title: '데이터 분석을 극대화하는 고객 인터뷰 만들기',
+    title: '데이터 분석을 극대화하는 회원 인터뷰 만들기',
     state: 'in-progress',
   },
   {
@@ -1440,7 +1451,7 @@ export const example: sampleProdType[] = [
     brand: 'STÖTTA 스퇴타',
     createdAt: 1585954756639,
     article:
-      '이번 글은 LTV 지표에 대한 내용입니다. 이 포스트 [link]를 주로 참조하였습니다.원 글은 이 곳에서 확인하실 수 있습니다.LTV (LifeTime Value)란?LTV는 Lifetime Value, “고객의 생애 가치”라고 불리는 지표로, 고객이 평생동안 기업에게 어느 정도의 가치를 가져다 주는지를 정량화한 지표입니다. 이 LTV는 확률 기반 모형으',
+      '이번 글은 LTV 지표에 대한 내용입니다. 이 포스트 [link]를 주로 참조하였습니다.원 글은 이 곳에서 확인하실 수 있습니다.LTV (LifeTime Value)란?LTV는 Lifetime Value, “회원의 생애 가치”라고 불리는 지표로, 회원이 평생동안 기업에게 어느 정도의 가치를 가져다 주는지를 정량화한 지표입니다. 이 LTV는 확률 기반 모형으',
     title: '신입/주니어에게 글쓰기가 주는 5가지 혜택',
     state: 'waiting',
   },
@@ -1461,7 +1472,7 @@ export const example: sampleProdType[] = [
     createdAt: 1613980070227,
     article:
       '브라우저의 내장 API는 웹 개발 요구사항에 따라 한계를 가진다. 커스텀 오류 메세지를 보여준다거나 폼을 제출하기 던에 입력값을 검증하는 등의 행위는 내장 API 만으로 는 구현이 까다롭다. 이러한 요구사항은 아래 세 개로 정리할 수 있다. 값을 필드에 바인딩할 수 있다. 폼 제출을 처리할 수 있다. 제출 전에 필드 값을 검증할 수 있다. 오류 메시지도',
-    title: '시장조사 이전에 고객 조사가 필요한 이유',
+    title: '시장조사 이전에 회원 조사가 필요한 이유',
     state: 'waiting',
   },
   {
@@ -1471,7 +1482,7 @@ export const example: sampleProdType[] = [
     createdAt: 1634599085394,
     article:
       'display를 flex로 설정하여 flexible 속성을 부여합니다. 또한 flex-direction을 column으로 설정하여 행이 아닌 열을 기준으로 자식 요소들이 나열되게 합니다. width, height 즉 너비와 높이 또한 16px로 기존에 tistory #1 스킨에서 설정해준 초기 설정값을 지향합니다. margin은 auto로 하여 여백을 페이',
-    title: '고객과의 소통을 돕는 서베이 툴 4가지',
+    title: '회원과의 소통을 돕는 서베이 툴 4가지',
     state: 'waiting',
   },
   {

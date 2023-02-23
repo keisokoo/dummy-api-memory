@@ -1,6 +1,7 @@
 import {
   citiesSample,
   example,
+  monthlyDataList,
   sampleAreaGroup,
   sampleSkillsGroup,
   sampleStreets,
@@ -22,6 +23,7 @@ export let listTargetType = {
   skill: sampleSkillsGroup,
   streets: nextList,
   cities: citiesSample,
+  monthly: monthlyDataList,
 }
 export type SampleListObjectType = typeof listTargetType
 export const isTargetType = (

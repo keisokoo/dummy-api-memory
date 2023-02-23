@@ -5,18 +5,18 @@ const router = express.Router()
 
 router.get('/:type/:id', (req, res, next) => {
   const target = req.params.type
-  const id = Number(req.params.id)
+  const id = req.params.id
   if (!isTargetType(target)) {
-    res.json({
+    res.status(404).json({
       message: 'Not Found Api',
       success: false,
       data: null,
     })
     return
   }
-  const dummyList: { id: number }[] = getList(listTargetType, target)
+  const dummyList: { id: number | string }[] = getList(listTargetType, target)
   if (!dummyList.some((item) => item.id === id)) {
-    res.json({
+    res.status(404).json({
       message: 'Not Found Api',
       success: false,
       data: null,
@@ -32,14 +32,14 @@ router.get('/:type/:id', (req, res, next) => {
 router.get('/:type', (req, res, next) => {
   const target = req.params.type
   if (!isTargetType(target)) {
-    res.json({
+    res.status(404).json({
       message: 'Not Found Api',
       success: false,
       data: null,
     })
     return
   }
-  const dummyList: { id: number }[] = getList(listTargetType, target)
+  const dummyList: { id: number | string }[] = getList(listTargetType, target)
 
   const searchTerm = (req.query.search ?? '') as string
   const limit = Number(req.query.limit) ? Number(req.query.limit) : 12
@@ -50,13 +50,11 @@ router.get('/:type', (req, res, next) => {
   })
 
   const cursorIndex = filteredList.findIndex((item) => item.id === cursor) ?? 0
-  console.log(cursorIndex, filteredList.length)
-  console.log(cursorIndex + 1, cursorIndex + limit + 1)
+
   const paged =
     cursorIndex < filteredList.length
       ? filteredList.slice(cursorIndex + 1, cursorIndex + limit + 1)
       : []
-  console.log('paged', filteredList, paged)
 
   let nextCursor = paged[paged.length - 1]?.id ?? null
   res.json({

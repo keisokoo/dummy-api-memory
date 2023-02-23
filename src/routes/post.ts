@@ -61,7 +61,7 @@ router.get('/:id', authMiddleWare, (req, res, next) => {
   const target = 'prod'
   const id = Number(req.params.id)
   if (!isTargetType(target)) {
-    res.json({
+    res.status(404).json({
       message: 'Not Found Api',
       success: false,
       data: null,
@@ -70,7 +70,7 @@ router.get('/:id', authMiddleWare, (req, res, next) => {
   }
   const dummyList: { id: number }[] = getList(listTargetType, target)
   if (!dummyList.some((item) => item.id === id)) {
-    res.json({
+    res.status(404).json({
       message: 'Not Found Api',
       success: false,
       data: null,
@@ -86,7 +86,7 @@ router.get('/:id', authMiddleWare, (req, res, next) => {
 router.get('/', authMiddleWare, (req, res, next) => {
   const target = 'prod'
   if (!isTargetType(target)) {
-    res.json({
+    res.status(404).json({
       message: 'Not Found Api',
       success: false,
       data: null,
