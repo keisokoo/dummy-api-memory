@@ -8,16 +8,17 @@ router.get('/:type/:id', (req, res, next) => {
   const id = req.params.id
   if (!isTargetType(target)) {
     res.status(404).json({
-      message: 'Not Found Api',
+      message: 'Not Found Api1',
       success: false,
       data: null,
     })
     return
   }
   const dummyList: { id: number | string }[] = getList(listTargetType, target)
-  if (!dummyList.some((item) => item.id === id)) {
+
+  if (!dummyList.some((item) => String(item.id) === id)) {
     res.status(404).json({
-      message: 'Not Found Api',
+      message: 'Not Found Api2',
       success: false,
       data: null,
     })
@@ -26,7 +27,7 @@ router.get('/:type/:id', (req, res, next) => {
   res.json({
     message: 'success',
     success: false,
-    data: dummyList.find((item) => item.id === id),
+    data: dummyList.find((item) => String(item.id) === id),
   })
 })
 router.get('/:type', (req, res, next) => {
