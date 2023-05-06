@@ -11,6 +11,7 @@ dotenv.config()
 interface GlobalError extends Error {
   status?: number
 }
+// test
 var app = express()
 app.use(logger('dev'))
 app.use(express.json())
