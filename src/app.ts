@@ -11,12 +11,16 @@ dotenv.config()
 interface GlobalError extends Error {
   status?: number
 }
-// test
+const corsOptions = {
+  origin: ['http://localhost:3000', 'https://obj.kr'],
+  methods: '*',
+  allowedHeaders: ['Content-Type', 'Authorization'],
+}
 var app = express()
 app.use(logger('dev'))
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
-app.use(cors())
+app.use(cors(corsOptions))
 app.use('/user', userRouter)
 app.use('/post', postRouter)
 app.use('/dummy', dummyRouter)

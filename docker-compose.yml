@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  dummy-api:
+    container_name: dummy-api
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - 48347:4000
+    networks:
+      - obj_network
+
+networks:
+  obj_network:
+    driver: bridge
+    external: true

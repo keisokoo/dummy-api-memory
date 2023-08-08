@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: objkr-dummy-api-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: objkr-dummy-api
+  template:
+    metadata:
+      labels:
+        app: objkr-dummy-api
+    spec:
+      containers:
+        - name: objkr-dummy-api
+          image: objkr-dummy-image
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 4000
